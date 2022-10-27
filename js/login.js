@@ -10,6 +10,8 @@ function entrar() {
 
     if (input_name.value == "") {
         alert('Digite o seu nome para seus amigos te reconhecerem!');
+        input_name.classList.toggle('hidden');
+        img_loading.classList.toggle('hidden');
     }
     else {
         usuario.name = input_name.value;
