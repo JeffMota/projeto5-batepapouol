@@ -5,6 +5,50 @@ body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+/*--------------------CSS login-screen----------------*/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+    background-color: #FFFFFF;
+}
+
+main img{
+    width: 130px;
+    height: 92px;
+    
+    margin-bottom: 100px;
+    margin-top: 70px;
+}
+
+main input{
+    width: 261px;
+    height: 54px;
+
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    outline-style: none;
+
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+main button {
+    width: 109px;
+    height: 45px;
+}
+
+.loading {
+    position: fixed;
+    top: 150px;
+
+    width: 250px;
+}
+
+/*-------------------CSS login-screec----------------------*/
 
 .main {
     height: 100%;
