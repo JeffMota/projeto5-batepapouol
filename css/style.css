@@ -7,7 +7,7 @@ body {
 }
 
 .main {
-    height: 100vh;
+    height: 100%;
     max-width: 600px;
     background-color: #F3F3F3;
 }
@@ -29,6 +29,15 @@ header {
     background-color: #fff;
 }
 
+footer{
+    position: fixed;
+    bottom: 0;
+
+    box-shadow: 3px -5px 5px rgb(224, 224, 224);
+
+    background-color: #fff;
+}
+
 .logo {
     height: 53px;
     width: 75px;
@@ -39,16 +48,6 @@ header {
     width: 42px;
     height: 31px;
     margin-right: 22px;
-}
-
-
-footer{
-    position: fixed;
-    bottom: 0;
-
-    box-shadow: 3px -5px 5px rgb(224, 224, 224);
-
-    background-color: #fff;
 }
 
 footer input{
@@ -68,6 +67,47 @@ footer button {
     margin-right: 22px;
 
     cursor: pointer;
+}
+
+/*-------------------------------------Chat---------------------------------*/
+.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 80px;
+
+    width: 100vw;
+    height: 75.5vh;
+
+    overflow-y: scroll;
+
+    font-size: 14px;
+    font-weight: 400;
+
+}
+
+.msg span{
+    font-weight: 700;
+}
+
+.msg {
+    display: flex;
+    width: 100%;
+    height: 40px;
+
+    margin: 2.5px 0;
+
+    align-items: center;
+
+    background-color: #fff;
+}
+
+.status {
+    background-color: #DCDCDC;
+}
+
+.reservada {
+    background-color: #FFDEDE;
 }
 
 /*--------------------------------Menu Lateral---------------------------*/
@@ -90,7 +130,6 @@ footer button {
 }
 
 .hidden {
-    transition: 1s;
     display: none;
 }
 
