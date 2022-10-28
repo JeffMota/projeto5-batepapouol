@@ -36,7 +36,7 @@ function enviarMensagem() {
 
     const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', mensagem);
     promessa.then(() => {buscarMSG()});
-    promessa.catch(() => { window.location.href = 'login.html' });
+    promessa.catch(() => { window.location.href = 'index.html' });
 
     campo.value = '';
 }
