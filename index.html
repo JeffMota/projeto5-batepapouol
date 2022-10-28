@@ -21,11 +21,11 @@
             <img onclick="fecharMenu()" class="menu" src="img/Vector.png" alt="Menu">
         </header>
         <div class="chat">
-            
+
         </div>
         <footer>
             <input class="campo" type="text" placeholder="Escreva aqui...">
-            <button class="btn_enviar">
+            <button type="submit" class="btn_enviar">
                 <img src="img/Send.png" alt="Enviar">
             </button>
         </footer>
@@ -34,6 +34,29 @@
         <div onclick="fecharMenu()" class="fechar">
         </div>
         <div class="menu_lateral">
+            <div class="titulo">
+                Escolha um contato
+                para enviar mensagem:
+            </div>
+            <div class="ativos">
+                
+
+            </div>
+            <div class="titulo">
+                Escolha visibilidade:
+            </div>
+            <div class="ativos">
+                <div class="on tipo" onclick="escolherTipo(this)">
+                    <img src="img/lock.png" alt="todos">
+                    <p>Público</p>
+                    <img class="" src="img/check.png">
+                </div>
+                <div class="on tipo" onclick="escolherTipo(this)">
+                    <img src="img/lock.png" alt="lock">
+                    <p>Reservadamente</p>
+                    <img class="escondido" src="img/check.png">
+                </div>
+            </div>
         </div>
     </div>
 
