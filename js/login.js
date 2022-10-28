@@ -20,7 +20,7 @@ function entrar() {
         localStorage.setItem('user', usuario.name);
 
         const promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', usuario);
-        promise.then(() => { window.location.href = 'index.html' });
+        promise.then(() => { window.location.href = 'pages/index.html' });
         promise.catch(() => {
             alert('Nome de usuário já cadastrado');
             input_name.classList.toggle('hidden');
