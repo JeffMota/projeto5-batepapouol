@@ -57,7 +57,7 @@ main button {
 }
 
 header,
-footer {
+.form {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,7 +74,13 @@ header {
     background-color: #fff;
 }
 
-footer {
+.formu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*--------------------------------------------------*/
+.form {
     position: fixed;
     bottom: 0;
 
@@ -95,7 +101,7 @@ footer {
     margin-right: 22px;
 }
 
-footer input {
+.form input {
     height: 80%;
     margin-left: 22px;
 
@@ -107,7 +113,7 @@ footer input {
     width: 100%;
 }
 
-footer button {
+.form button {
     border: none;
     background-color: #fff;
     margin-right: 22px;

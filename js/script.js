@@ -4,6 +4,7 @@ const chat = document.querySelector('.chat');
 const campo = document.querySelector('.campo');
 const btn_enviar = document.querySelector('.btn_enviar');
 const ativos = document.querySelector('.ativos');
+const form = document.querySelector('.form');
 var mensagens;
 
 var ultimaMensagem;
@@ -26,21 +27,19 @@ var mensagem = {
 }
 
 function enviarMensagem() {
-    const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', mensagem);
-    promessa.then(buscarMSG());
-    promessa.catch(() => { window.location.href = 'login.html' });
-}
-
-btn_enviar.addEventListener('click', () => {
     if (campo.value != '') {
         mensagem.from = usuario.name;
         mensagem.text = campo.value;
         mensagem.to = destinatario;
         mensagem.type = tipo;
-        enviarMensagem();
     }
 
-})
+    const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', mensagem);
+    promessa.then(() => {buscarMSG()});
+    promessa.catch(() => { window.location.href = 'login.html' });
+
+    campo.value = '';
+}
 
 function escolher(elm) {
     const part = document.querySelectorAll('.participante')
@@ -78,7 +77,7 @@ function buscarParticipantes() {
             <div class="on participante" onclick="escolher(this)">
                 <img class="perfil" src="img/Vector.png" alt="todos">
                 <p>Todos</p>
-                <img class="escondido" src="img/check.png">
+                <img class="" src="img/check.png">
             </div>
             `;
 
@@ -158,8 +157,15 @@ function buscarMSG() {
     });
 }
 
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    enviarMensagem();
+})
+
+
 buscarMSG();
 buscarParticipantes();
-setInterval(buscarMSG, 3000);
+setInterval(buscarMSG, 2000);
 setInterval(buscarParticipantes, 1000);
 

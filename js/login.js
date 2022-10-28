@@ -1,6 +1,7 @@
 const input_name = document.querySelector('.input_name');
 const btn_entr = document.querySelector('.btn_entrar');
 const img_loading = document.querySelector('.loading');
+const form = document.querySelector('.formu');
 
 var usuario = { name: '' };
 
@@ -29,5 +30,8 @@ function entrar() {
     }
 }
 
-btn_entr.addEventListener('click', entrar);
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    entrar();
+})
 
