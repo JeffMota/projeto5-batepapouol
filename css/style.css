@@ -112,6 +112,10 @@ header {
 
     width: 100%;
 }
+.form input::placeholder{
+    display: flex;
+    flex-direction: column;
+}
 
 .form button {
     border: none;
