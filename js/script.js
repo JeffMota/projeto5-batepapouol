@@ -30,6 +30,7 @@ var mensagem = {
     type: "message"
 }
 
+
 //Eviar mensagem
 function enviarMensagem() {
     if (campo.value != '') {
@@ -54,11 +55,15 @@ function escolher(elm) {
     })
     elm.children[2].classList.remove('escondido');
     destinatario = elm.children[1].innerHTML;
-    if (destinatario === 'Todos') {
+    if (destinatario == 'Todos') {
         dest.classList.add('hidden');
+        console.log('Todos')
     }
     else {
         dest.classList.remove('hidden');
+        dest.innerHTML = `
+            Enviando para ${destinatario}
+        `
     }
 }
 
@@ -91,12 +96,11 @@ function buscarParticipantes() {
     promise.then(response => {
         const data = response.data;
         participanteOnline = [];
-        
-        
+
 
         if (data.length != numeroParticipantes) {
             ativos.innerHTML = `
-            <div class="on participante" onclick="escolher(this)">
+            <div data-identifier="participant" class="on participante" onclick="escolher(this)">
                 <img class="perfil" src="img/Vector.png" alt="todos">
                 <p>Todos</p>
                 <img class="escondido" src="img/check.png">
@@ -107,7 +111,7 @@ function buscarParticipantes() {
             data.forEach(elm => {
                 if (elm.name != usuario.name) {
                     ativos.innerHTML += `
-                    <div class="on participante" onclick="escolher(this)">
+                    <div data-identifier="participant" class="on participante" onclick="escolher(this)">
                             <img class="perfil" src="img/perfil.png" alt="todos">
                             <p>${elm.name}</p>
                             <img class="escondido " src="img/check.png">
@@ -118,21 +122,21 @@ function buscarParticipantes() {
 
             const on = document.querySelectorAll('.on');
             on.forEach(el => {
-                if(el.children[1].innerHTML == destinatario){
+                if (el.children[1].innerHTML == destinatario) {
                     el.children[2].classList.remove('escondido');
                 }
                 participanteOnline.push(el.children[1].innerHTML);
             })
 
-            for(let i = 0; i < participanteOnline.length; i++){
-                if(participanteOnline[i] == destinatario){
+            for (let i = 0; i < participanteOnline.length; i++) {
+                if (participanteOnline[i] == destinatario) {
                     destOn = true;
                 }
                 else {
                     destOn = false;
                 }
             }
-            if(destOn == false){
+            if (destOn == false) {
                 destinatario = 'Todos';
             }
 

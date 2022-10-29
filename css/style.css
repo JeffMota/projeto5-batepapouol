@@ -245,3 +245,12 @@ header {
 .escondido {
     visibility: hidden;
 }
+
+
+.form div {
+    height: 70%;
+}
+
+.dest {
+    margin-left:  20px;
+}
