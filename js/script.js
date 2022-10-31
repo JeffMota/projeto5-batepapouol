@@ -23,6 +23,8 @@ var usuario = {
 usuario.name = localStorage.getItem('user');
 localStorage.removeItem('user');
 
+
+//Template da mensagem
 var mensagem = {
     from: "",
     to: "Todos",
@@ -41,7 +43,7 @@ function enviarMensagem() {
     }
 
     const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', mensagem);
-    promessa.then(() => { buscarMSG() });
+    promessa.then(buscarMSG);
     promessa.catch(() => { window.location.href = 'index.html' });
 
     campo.value = '';
@@ -152,11 +154,12 @@ setInterval(() => {
 
 }, 5000);
 
+//Abrir ou fechar menu lateral
 function fecharMenu() {
     participantes.classList.toggle('hidden');
 }
 
-//Função que busca mensagens
+//Função que renderiza mensagens
 function renderizarMSGS(data) {
     chat.innerHTML = '';
 
@@ -215,6 +218,6 @@ form.addEventListener('submit', (e) => {
 
 buscarMSG();
 buscarParticipantes();
-setInterval(buscarMSG, 2000);
+setInterval(buscarMSG, 3000);
 setInterval(buscarParticipantes, 10000);
 
