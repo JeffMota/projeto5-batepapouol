@@ -18,17 +18,17 @@
     <div class="main">
         <header>
             <img class="logo" src="img/logo 1.png" alt="Logo">
-            <img onclick="fecharMenu()" class="menu" src="img/Vector.png" alt="Menu">
+            <img data-test="open-participants" onclick="fecharMenu()" class="menu" src="img/Vector.png" alt="Menu">
         </header>
         <div class="chat">
 
         </div>
         <form class="form">
             <div>
-                <input name="text" class="campo" type="search" placeholder="Escreva aqui...">
-                <p class="dest"></p>
+                <input data-test="input-message" name="text" class="campo" type="search" placeholder="Escreva aqui...">
+                <p data-test="recipient" class="dest"></p>
             </div>
-            <button type="submit" class="btn_enviar">
+            <button data-test="send-message" type="submit" class="btn_enviar">
                 <img src="img/Send.png" alt="Enviar">
             </button>
         </form>
@@ -49,15 +49,15 @@
                 Escolha visibilidade:
             </div>
             <div class="ativos">
-                <div class="on tipo" onclick="escolherTipo(this)">
+                <div data-test="public" class="on tipo" onclick="escolherTipo(this)">
                     <img src="img/lock.png" alt="todos">
                     <p>Público</p>
-                    <img class="" src="img/check.png">
+                    <img data-test="check" class="" src="img/check.png">
                 </div>
-                <div class="on tipo" onclick="escolherTipo(this)">
+                <div data-test="private" class="on tipo" onclick="escolherTipo(this)">
                     <img src="img/lock.png" alt="lock">
                     <p>Reservadamente</p>
-                    <img class="escondido" src="img/check.png">
+                    <img data-test="check" class="escondido" src="img/check.png">
                 </div>
             </div>
         </div>

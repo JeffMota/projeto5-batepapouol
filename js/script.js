@@ -102,10 +102,10 @@ function buscarParticipantes() {
 
         if (data.length != numeroParticipantes) {
             ativos.innerHTML = `
-            <div data-identifier="participant" class="on participante" onclick="escolher(this)">
+            <div data-test="all" class="on participante" onclick="escolher(this)">
                 <img class="perfil" src="img/Vector.png" alt="todos">
                 <p>Todos</p>
-                <img class="escondido" src="img/check.png">
+                <img data-test="check" class="escondido" src="img/check.png">
             </div>
             `;
 
@@ -113,10 +113,10 @@ function buscarParticipantes() {
             data.forEach(elm => {
                 if (elm.name != usuario.name) {
                     ativos.innerHTML += `
-                    <div data-identifier="participant" class="on participante" onclick="escolher(this)">
+                    <div data-test="participant" class="on participante" onclick="escolher(this)">
                             <img class="perfil" src="img/perfil.png" alt="todos">
                             <p>${elm.name}</p>
-                            <img class="escondido " src="img/check.png">
+                            <img data-test="check" class="escondido " src="img/check.png">
                     </div>
                 `
                 }
@@ -166,21 +166,21 @@ function renderizarMSGS(data) {
     data.forEach(element => {
         if (element.type == "status") {
             chat.innerHTML += `
-                <section class="msg status" >
+                <section data-test="message" class="msg status" >
                     ${element.time} <span> ${element.from} </span> ${element.text}
                 </section>
             `
         }
         else if (element.type == "message") {
             chat.innerHTML += `
-                <section class="msg" >
+                <section data-test="message" class="msg" >
                     ${element.time} <span> ${element.from} </span> para <span>${element.to}</span> : ${element.text}
                 </section>
             `
         }
         else if (usuario.name == element.to || element.from == usuario.name) {
             chat.innerHTML += `
-                <section class="msg reservada" >
+                <section data-test="message" class="msg reservada" >
                     ${element.time} <span> ${element.from} </span> reservadamente para <span>${element.to}</span> : ${element.text}
                 </section>
             `
